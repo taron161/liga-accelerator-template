@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="arrow" viewBox="0 0 22 22"><g fill="none">
+<path d="M6 1L16 11L6 21" stroke="#102654"/>
+</g></symbol><symbol id="minus" viewBox="0 0 22 22"><g fill="none">
+<path d="M21 11H11H1" stroke="#102654"/>
+</g></symbol><symbol id="play" viewBox="0 0 22 22"><g fill="none">
+<path d="M17.5 11L4.5 18.5L4.5 3.5L17.5 11Z" fill="#102654"/>
+</g></symbol><symbol id="plus" viewBox="0 0 20 20"><g fill="none">
+<path d="M10 0V10M10 20V10M10 10H20M10 10H0" stroke="#102654"/>
+</g></symbol></svg>
