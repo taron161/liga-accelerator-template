@@ -1,0 +1,68 @@
+.btn {
+  display: block;
+  color: $color-default-white;
+  padding: 27px 0;
+  text-align: center;
+  text-transform: uppercase;
+  border: none;
+  box-shadow: inset 0 0 0 2px $color-default-white;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 12px;
+  transition: color $trans-default;
+
+  @include vp-1365 {
+    padding: 22px 0;
+  }
+
+  @include hover-focus {
+    background-color: $color-default-white;
+    color: $egyptian-blue;
+    box-shadow: none;
+    outline: none;
+  }
+
+  @include active {
+    background-color: $color-default-white;
+    color: $sapphire;
+    box-shadow: none;
+    outline: none;
+  }
+
+  &--disabled,
+  &:disabled {
+    opacity: 0.5;
+  }
+
+  &--active {
+    background: $red-blue-gradient;
+    color: $color-default-white;
+    box-shadow: none;
+  }
+
+  &--dark {
+    background-color: $color-default-white;
+    color: $sapphire;
+    box-shadow: inset 0 0 0 2px $sapphire;
+
+    @include hover-focus {
+      background: $red-blue-gradient;
+      color: $color-default-white;
+      box-shadow: none;
+      outline: none;
+    }
+
+    @include active {
+      background: $red-blue-gradient;
+      color: $color-default-white;
+      opacity: 0.7;
+      box-shadow: none;
+      outline: none;
+    }
+
+    &--disabled,
+    &:disabled {
+      opacity: 0.3;
+    }
+  }
+}

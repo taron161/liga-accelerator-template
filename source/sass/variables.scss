@@ -19,6 +19,7 @@ $black-russian:                     #030a1a;
 // Gradient
 
 $blue-red-gradient:                 linear-gradient(90deg, #1c3477 0%, #1c3477 0.01%, #1a3578 39.76%, #73184b 75.5%, #b4022a 100%);
+$red-blue-gradient:                 linear-gradient(97deg, #ed0233 0%, #003eb7 100%);
 
 // Typography
 // ---------------------------------
@@ -29,6 +30,8 @@ $fz-default:                        16px;
 // у некоторых шрифтов в ios возникают проблемы с символом рубля
 // https://www.artlebedev.ru/kovodstvo/sections/159/#13
 $ff-rouble:                         "Rouble", "Arial", sans-serif;
+
+$ff-alumnisans:                     "Alumnisans", "Arial", sans-serif;
 
 $ff-placeholder:                    "Roboto-condensed", "Arial", sans-serif;
 
