@@ -89,8 +89,8 @@
                 <img src="img/gym/gym.jpg" srcset="img/gym/gym@2x.jpg 2x" width="660" height="401" alt="Тренажерный зал">
               </picture>
             </div>
-            <div class="gym__video">
-              <div class="gym__preview">
+            <div class="gym__video video">
+              <div class="video__preview">
                 <picture>
                   <source type="image/webp" media="(max-width: 767px)" srcset="img/gym/video/mobile/video.webp 1x, img/gym/video/mobile/video@2x.webp 2x">
                   <source type="image/webp" media="(max-width: 1365px)" srcset="img/gym/video/tablet/video.webp 1x, img/gym/video/tablet/video@2x.webp 2x">
@@ -102,15 +102,51 @@
                 </picture>
               </div>
 
-              <button class="gym__btn play-btn" type="button">
+              <button class="video__btn" type="button">
                 <span class="visually-hidden">Включить видео</span>
-                <svg aria-hidden="true" focusable="false" width="17" height="17">
+                <svg aria-hidden="true" focusable="false" width="22" height="22">
                   <use href="img/sprite.svg#play"></use>
                 </svg>
               </button>
             </div>
           </div>
         </section>
+
+        <section class="subscription" id="subscription">
+          <div class="container">
+            <h2 class="subscription__title">Абонементы</h2>
+
+            <div class="subscription__duration">
+              <button class="subscription__btn subscription__btn--active" type="button">1 месяц</button>
+              <button class="subscription__btn" type="button">6 месяцев</button>
+              <button class="subscription__btn" type="button">12 месяцев</button>
+            </div>
+
+            <ul class="subscription__list">
+              <li class="subscription__item subscription-card">
+                <h3 class="subscription-card__title">С тренером</h3>
+                <span class="subscription-card__text">12 занятий</span>
+                <b class="subscription-card__price">5000  <span class="rouble">₽</span></b>
+                <a class="subscription-card__link btn btn--dark" href="#">Купить абонемент</a>
+              </li>
+
+              <li class="subscription__item subscription-card subscription-card--active">
+                <h3 class="subscription-card__title">Дневной</h3>
+                <span class="subscription-card__text">с 8:00 до 17:00 </span>
+                <b class="subscription-card__price">1700  <span class="rouble">₽</span></b>
+                <a class="subscription-card__link btn btn--active" href="#">Купить абонемент</a>
+              </li>
+
+              <li class="subscription__item subscription-card">
+                <h3 class="subscription-card__title">Полный день</h3>
+                <span class="subscription-card__text">с 8:00 до 22:00 </span>
+                <b class="subscription-card__price">2700  <span class="rouble">₽</span></b>
+                <a class="subscription-card__link btn btn--dark" href="#">Купить абонемент</a>
+              </li>
+            </ul>
+          </div>
+        </section>
+
         <section class="super-games visually-hidden">
           <div class="container">
             <div class="super-games__text-wrapper">
@@ -140,12 +176,59 @@
       </main>
       <footer class="footer">
         <div class="container">
-          🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵🦵
+          <div class="footer__wrapper">
+            <div class="footer__logo">
+              <a class="footer__link" href="#"><img src="img/svg/logo.svg" width="109" height="24" alt="Лого"></a>
+            </div>
+
+            <ul class="footer__menu menu">
+              <li class="menu__item">
+                <a class="menu__link" href="#">Услуги</a>
+              </li>
+
+              <li class="menu__item">
+                <a class="menu__link" href="#">Абонементы</a>
+              </li>
+
+              <li class="menu__item">
+                <a class="menu__link" href="#">Акции</a>
+              </li>
+
+              <li class="menu__item">
+                <a class="menu__link" href="#">Тренеры</a>
+              </li>
+
+              <li class="menu__item">
+                <a class="menu__link" href="#">Расписание</a>
+              </li>
+            </ul>
+
+            <div class="footer__social social">
+              <a class="social__link" href="https://vk.com/htmlacademy">
+                <svg aria-hidden="true" focusable="false" width="14" height="14">
+                  <use href="img/sprite.svg#vk"></use>
+                </svg>
+                <span class="visually-hidden">Перейти на сайт "Вконтакте"</span>
+              </a>
+              <a class="social__link" href="https://ok.ru/htmlacademy">
+                <svg aria-hidden="true" focusable="false" width="14" height="14">
+                  <use href="img/sprite.svg#odnoklassniki"></use>
+                </svg>
+                <span class="visually-hidden">Перейти на сайт "Одноклассники"</span>
+              </a>
+              <a class="social__link" href="https://www.reddit.com">
+                <svg aria-hidden="true" focusable="false" width="14" height="14">
+                  <use href="img/sprite.svg#reddit"></use>
+                </svg>
+                <span class="visually-hidden">Перейти на сайт "Reddit"</span>
+              </a>
+            </div>
+          </div>
         </div>
       </footer>
     </div>
 
-    <!-- <script src="js/vendor.min.js"></script>
-    <script src="js/main.min.js"></script> -->
+    <!-- <script src="js/vendor.min.js"></script>-->
+    <script src="js/main.min.js" type="module"></script>
   </body>
 </html>

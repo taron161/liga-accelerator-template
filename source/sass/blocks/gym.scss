@@ -48,12 +48,14 @@
     line-height: 54px;
     letter-spacing: 1.62px;
     margin: 0;
+    margin-top: -5px;
 
     @include vp-1365 {
       font-size: 42px;
       line-height: 42px;
       letter-spacing: 1.26px;
       text-align: center;
+      margin: 0;
     }
 
     @include vp-767 {
@@ -69,7 +71,7 @@
     font-size: 22px;
     font-weight: 400;
     line-height: 22px;
-    margin: 25px 0 95px;
+    margin: 31px 0 95px;
 
     @include vp-1365 {
       font-size: 20px;
@@ -87,14 +89,19 @@
 
   p {
     margin: 0;
+    margin-left: -2px;
+    margin-top: -2px;
 
     @include vp-1365 {
       text-align: center;
     }
 
     @include vp-767 {
+      font-size: 14px;
+      line-height: 22px;
       text-align: left;
       padding-right: 11px;
+      margin-left: 0;
     }
 
     &:last-child {
@@ -122,40 +129,5 @@
 
   img {
     width: 100%;
-  }
-}
-
-.gym__video {
-  .gym__preview,
-  img,
-  iframe {
-    width: 100%;
-    height: 100%;
-    flex-shrink: 0;
-  }
-
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 364px;
-  height: 228px;
-  background-color: $resolution-blue;
-  text-indent: -100vw;
-  top: 408px;
-  left: 40%;
-
-  @include vp-1365 {
-    position: static;
-    width: 265px;
-    height: 167px;
-    margin-top: -83px;
-  }
-
-  @include vp-767 {
-    margin-top: 40px;
-    width: 100%;
-    min-height: 167px;
-    height: 52vw;
   }
 }
