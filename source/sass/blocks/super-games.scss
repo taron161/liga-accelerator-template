@@ -1,0 +1,204 @@
+.super-games {
+  .container {
+    display: flex;
+
+    @include vp-767 {
+      flex-direction: column;
+    }
+  }
+  margin-bottom: 120px;
+
+  @include vp-1365 {
+    margin-bottom: 100px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 70px;
+  }
+}
+
+.super-games__text-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 500px;
+  background-color: $torch-red;
+  color: $color-default-white;
+  padding: 80px;
+
+  @include vp-1365 {
+    width: 100%;
+    min-width: 292px;
+    padding: 45px;
+    padding-top: 40px;
+  }
+
+  @include vp-767 {
+    min-width: 290px;
+    padding: 40px;
+  }
+}
+
+.super-games__title {
+  width: min-content;
+  font-family: $ff-alumnisans;
+  font-weight: 600;
+  font-size: 82px;
+  line-height: 76px;
+  letter-spacing: 2.46px;
+  text-transform: uppercase;
+  margin: 0;
+  margin-right: 68px;
+
+  @include vp-1365 {
+    font-size: 48px;
+    line-height: 46px;
+    letter-spacing: 1.44px;
+    margin-right: 40px;
+  }
+
+  @include vp-767 {
+    margin-right: 37px;
+  }
+}
+
+.super-games__date-wrapper {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @include vp-1365 {
+    gap: 8px;
+  }
+
+  @include vp-767 {
+    gap: 6px;
+  }
+}
+
+.super-games__date {
+  margin: 0;
+}
+
+.super-games__date-name,
+.super-games__description {
+  font-size: 18px;
+
+  @include vp-767 {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.super-games__date-name {
+  display: block;
+  margin-bottom: 12px;
+
+  @include vp-1365 {
+    margin-bottom: 2px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 3px;
+  }
+}
+
+.super-games__date-number {
+  display: block;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 40px;
+
+  @include vp-1365 {
+    font-size: 24px;
+    line-height: 24px;
+  }
+}
+
+.super-games__date-text {
+  width: min-content;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+  margin: 0;
+  margin-left: 6px;
+  margin-top: 5px;
+
+  @include vp-1365 {
+    font-size: 10px;
+    line-height: 10px;
+    margin-left: 3px;
+    margin-top: 2px;
+  }
+
+  span {
+    display: block;
+    margin-top: 5px;
+
+    @include vp-1365 {
+      margin: 0;
+    }
+  }
+}
+
+.super-games__date-group {
+  position: relative;
+  display: flex;
+  width: min-content;
+  margin: 0;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 1px;
+    top: -4px;
+    background-color: $color-default-white;
+
+    @include vp-1365 {
+      top: -2px;
+    }
+
+    @include vp-767 {
+      top: -3px;
+    }
+  }
+}
+
+.super-games__description {
+  margin: 23px 0 55px;
+
+  @include vp-1365 {
+    margin: 6px 0 21px;
+  }
+
+  @include vp-767 {
+    margin: 13px 0 20px;
+    padding-right: 35px;
+  }
+}
+
+.super-games__btn {
+  width: 100%;
+}
+
+.super-games__image {
+  img {
+    background-color: $resolution-blue;
+    max-width: 660px;
+    max-height: 500px;
+
+    @include vp-1365 {
+      min-width: 386px;
+      width: 100%;
+      height: auto;
+    }
+
+    @include vp-767 {
+      min-width: 290px;
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+    }
+  }
+}

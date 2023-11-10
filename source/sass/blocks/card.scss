@@ -1,0 +1,12 @@
+.card {
+  &::before {
+    position: absolute;
+    content: "";
+    width: calc(100% + 14px);
+    height: calc(100% + 14px);
+    background: $bg-gradient;
+    z-index: -1;
+    top: -7px;
+    left: -7px;
+  }
+}

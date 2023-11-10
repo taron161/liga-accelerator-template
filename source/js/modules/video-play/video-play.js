@@ -3,12 +3,12 @@ const VIDEO = {
   title: 'Бесплатные интерактивные онлайн-курсы',
 };
 
-const container = document.querySelector('.video');
-const preview = document.querySelector('.video__preview');
-const playBtn = document.querySelector('.video__btn');
+const container = document.querySelector('[data-gym="video"]');
+const preview = document.querySelector('[data-video="preview"]');
+const playBtn = document.querySelector('[data-video="btn"]');
 
 const showPlayBnt = () => {
-  container.classList.add('video--enabled');
+  container.classList.add('is-enabled');
 };
 
 const createIframe = (parent, {url, title}) => {

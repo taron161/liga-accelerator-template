@@ -1,6 +1,7 @@
 import {iosVhFix} from './utils/ios-vh-fix';
 import {Form} from './modules/form-validate/form';
 import {showPlayBnt, playVideo, playBtn} from './modules/video-play/video-play';
+import {subscriptionBtnsWrapper, setPrice} from './modules/subscription/subscription-selection';
 
 // ---------------------------------
 
@@ -14,11 +15,26 @@ window.addEventListener('DOMContentLoaded', () => {
   // Modules
   // ---------------------------------
 
-  showPlayBnt();
+  if (playBtn) {
+    showPlayBnt();
 
-  playBtn.addEventListener('click', () => {
-    playVideo();
-  });
+    playBtn.addEventListener('click', () => {
+      playVideo();
+    });
+  }
+
+  if (subscriptionBtnsWrapper) {
+    subscriptionBtnsWrapper.addEventListener('click', (evt) => {
+      if (evt.target.closest('button')) {
+        evt.preventDefault();
+        const key = evt.target.dataset.duration;
+        setPrice(key);
+        subscriptionBtnsWrapper.querySelector('.is-active').classList.remove('is-active');
+        evt.target.classList.add('is-active');
+      }
+    });
+  }
+
 
   // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
   // в load следует добавить скрипты, не участвующие в работе первого экрана

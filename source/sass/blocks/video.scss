@@ -16,7 +16,7 @@
   background-color: $resolution-blue;
   text-indent: -100vw;
   top: 408px;
-  left: 39%;
+  left: 39.5%;
 
   @include vp-1365 {
     position: static;
@@ -32,7 +32,7 @@
     height: 52vw;
   }
 
-  &--enabled .video__btn {
+  &.is-enabled .video__btn {
     display: block;
   }
 }
