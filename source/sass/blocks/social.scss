@@ -21,19 +21,22 @@
   color: $black-russian;
   outline: none;
 
-  @include hover-focus {
-    background-color: $egyptian-blue;
-    color: $color-default-white;
-  }
+  &:not(.social__link--disabled) {
+    @include hover-focus {
+      background-color: $egyptian-blue;
+      color: $color-default-white;
+    }
 
-  @include active {
-    background-color: $black-russian;
-    color: $color-default-white;
+    @include active {
+      background-color: $black-russian;
+      color: $color-default-white;
+    }
   }
 
   &--disabled {
     background-color: transparentize($color-default-white, 0.3);
     color: $black-russian;
+    cursor: default;
   }
 
   svg {

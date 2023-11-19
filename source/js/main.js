@@ -1,7 +1,11 @@
 import {iosVhFix} from './utils/ios-vh-fix';
 import {Form} from './modules/form-validate/form';
-import {showPlayBnt, playVideo, playBtn} from './modules/video-play/video-play';
-import {subscriptionBtnsWrapper, setPrice} from './modules/subscription/subscription-selection';
+import {playVideo} from './modules/video-play/video-play';
+import {onClickSubscriptionButton} from './modules/subscription/subscription';
+import {jurySwiper} from './modules/swiper/jury-swiper';
+import {reviewsSwiper} from './modules/swiper/reviews-swiper';
+import {initAccordions} from './modules/accordion/init-accordion';
+import {toggleTabs} from './modules/accordion/accordion-tabs-toggle';
 
 // ---------------------------------
 
@@ -15,26 +19,17 @@ window.addEventListener('DOMContentLoaded', () => {
   // Modules
   // ---------------------------------
 
-  if (playBtn) {
-    showPlayBnt();
+  // Video
 
-    playBtn.addEventListener('click', () => {
-      playVideo();
-    });
-  }
+  playVideo();
 
-  if (subscriptionBtnsWrapper) {
-    subscriptionBtnsWrapper.addEventListener('click', (evt) => {
-      if (evt.target.closest('button')) {
-        evt.preventDefault();
-        const key = evt.target.dataset.duration;
-        setPrice(key);
-        subscriptionBtnsWrapper.querySelector('.is-active').classList.remove('is-active');
-        evt.target.classList.add('is-active');
-      }
-    });
-  }
+  // Subscriptions buttons toggle
 
+  onClickSubscriptionButton();
+
+  // FAQ
+
+  toggleTabs();
 
   // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
   // в load следует добавить скрипты, не участвующие в работе первого экрана
@@ -42,30 +37,20 @@ window.addEventListener('DOMContentLoaded', () => {
     const form = new Form();
     window.form = form;
     form.init();
+
+    // FAQ
+    // ---------------------------------
+
+    initAccordions();
+
+    // Jury Swiper
+    // ---------------------------------
+
+    jurySwiper.init();
+
+    // Reviews Swiper
+    // ---------------------------------
+
+    reviewsSwiper.init();
   });
 });
-
-// ---------------------------------
-
-// ❗❗❗ обязательно установите плагины eslint, stylelint, editorconfig в редактор кода.
-
-// привязывайте js не на классы, а на дата атрибуты (data-validate)
-
-// вместо модификаторов .block--active используем утилитарные классы
-// .is-active || .is-open || .is-invalid и прочие (обязателен нейминг в два слова)
-// .select.select--opened ❌ ---> [data-select].is-open ✅
-
-// выносим все в дата атрибуты
-// url до иконок пинов карты, настройки автопрокрутки слайдера, url к json и т.д.
-
-// для адаптивного JS используется matchMedia и addListener
-// const breakpoint = window.matchMedia(`(min-width:1024px)`);
-// const breakpointChecker = () => {
-//   if (breakpoint.matches) {
-//   } else {
-//   }
-// };
-// breakpoint.addListener(breakpointChecker);
-// breakpointChecker();
-
-// используйте .closest(el)

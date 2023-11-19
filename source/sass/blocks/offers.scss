@@ -1,0 +1,169 @@
+.offers {
+  padding: 120px 0;
+
+  @include vp-1365 {
+    padding: 100px 0;
+  }
+
+  @include vp-767 {
+    padding: 70px 0;
+  }
+
+  h2,
+  h3,
+  span,
+  b,
+  p,
+  a {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
+  h2 {
+    text-align: center;
+    font-family: $ff-alumnisans;
+    font-weight: 600;
+    font-size: 54px;
+    line-height: 54px;
+    letter-spacing: 1.62px;
+    margin-bottom: 70px;
+
+    @include vp-1365 {
+      font-size: 42px;
+      line-height: 42px;
+      letter-spacing: 1.26px;
+      margin-bottom: 38px;
+    }
+
+    @include vp-767 {
+      font-size: 32px;
+      line-height: 32px;
+      letter-spacing: 0.96px;
+      margin-bottom: 42px;
+    }
+  }
+
+  a {
+    position: relative;
+    width: max-content;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    color: currentColor;
+    outline: none;
+    padding: 10px;
+    margin-left: -10px;
+    margin-top: 10px;
+
+    @include vp-767 {
+      margin-left: 0;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      width: calc(100% - 20px);
+      height: 1px;
+      background-color: currentColor;
+      bottom: 6px;
+      left: 10px;
+    }
+
+    &.is-disabled {
+      opacity: 0.5;
+      cursor: default;
+      pointer-events: none;
+    }
+
+    &:not(.is-disabled) {
+      @include hover-focus {
+        opacity: 1;
+        box-shadow: inset 0 0 0 1px currentColor;
+
+        &::after {
+          display: none;
+        }
+      }
+
+      @include hover {
+        opacity: 0.8;
+        box-shadow: none;
+      }
+
+
+      @include focus {
+        opacity: 1;
+        box-shadow: inset 0 0 0 1px currentColor;
+
+        &::after {
+          display: none;
+        }
+      }
+
+      @include active {
+        opacity: 1;
+        box-shadow: none;
+      }
+    }
+  }
+
+  span,
+  h3 {
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 26px;
+
+    @include vp-1365 {
+      font-size: 24px;
+      line-height: 24px;
+    }
+
+    @include vp-767 {
+      font-size: 22px;
+      line-height: 22px;
+      text-align: center;
+    }
+  }
+}
+
+.offers__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+
+  @include vp-1365 {
+    gap: 30px;
+  }
+
+  @include vp-767 {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.offers__card {
+  h3 {
+    margin-bottom: 5px;
+  }
+
+  p {
+    flex-grow: 1;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+    @include vp-1365 {
+      padding-right: 20px;
+    }
+
+    @include vp-767 {
+      width: 160px;
+      margin-right: 1px;
+      font-size: 14px;
+      line-height: 22px;
+      padding-right: 0;
+    }
+  }
+}

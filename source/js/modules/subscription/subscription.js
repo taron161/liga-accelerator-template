@@ -15,7 +15,21 @@ const setPrice = (duration) => {
       element.textContent = PRICE[duration][index];
     });
   }
-
 };
 
-export {subscriptionBtnsWrapper, setPrice};
+const onClickSubscriptionButton = () => {
+  if (subscriptionBtnsWrapper) {
+    subscriptionBtnsWrapper.addEventListener('click', (evt) => {
+      if (evt.target.closest('button')) {
+        evt.preventDefault();
+        const key = evt.target.dataset.duration;
+        setPrice(key);
+        subscriptionBtnsWrapper.querySelector('.is-active').classList.remove('is-active');
+        evt.target.classList.add('is-active');
+      }
+    });
+  }
+};
+
+
+export {onClickSubscriptionButton};

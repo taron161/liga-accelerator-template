@@ -1,6 +1,5 @@
 .hero {
   width: 100%;
-  background: $blue-red-gradient;
   color: $color-default-white;
   padding-bottom: 120px;
 
@@ -24,10 +23,14 @@
 }
 
 .hero__wrapper {
+  margin-left: 3px;
+  margin-top: 2px;
+
   @include vp-767 {
     width: 100%;
     justify-content: space-between;
     align-items: end;
+    margin-left: -1px;
   }
 }
 
@@ -45,7 +48,8 @@
 
   @include vp-1365 {
     max-width: 185px;
-    margin-left: 26px;
+    margin-left: 23px;
+    margin-top: -2px;
   }
 
   @include vp-767 {
@@ -62,10 +66,17 @@
   line-height: 22px;
   padding: 0;
   margin: 0;
+  margin-left: -3px;
+  margin-right: 3px;
+
+  @include vp-767 {
+    margin: 0;
+  }
 
   @include vp-767 {
     line-height: 20px;
     min-width: 113px;
+    margin-bottom: 1px;
   }
 }
 

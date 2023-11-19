@@ -1,7 +1,6 @@
 
 .header {
   width: 100%;
-  background: $blue-red-gradient;
 }
 
 .header__wrapper {
@@ -31,17 +30,20 @@
   font-size: 26px;
   line-height: 26px;
 
-  @include hover-focus {
-    color: $resolution-blue;
-  }
+  &:not(.header__phone--disabled) {
+    @include hover-focus {
+      color: $resolution-blue;
+    }
 
-  @include active {
-    color: $sapphire;
-    text-decoration: underline;
+    @include active {
+      color: $sapphire;
+      text-decoration: underline;
+    }
   }
 
   &--disabled {
     opacity: 0.5;
+    cursor: default;
   }
 
   @include vp-1365 {
@@ -63,6 +65,7 @@
   @include vp-1365 {
     width: 111px;
     height: 24px;
+    margin-top: -2px;
   }
 
   @include vp-767 {

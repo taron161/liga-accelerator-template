@@ -1,0 +1,138 @@
+.profile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 260px;
+  height: 294px;
+  cursor: default;
+
+  @include vp-1365 {
+    width: 47.2%;
+    height: auto;
+  }
+
+  @include vp-767 {
+    width: 100%;
+  }
+
+  img,
+  picture {
+    width: 100%;
+  }
+
+  &:focus-within {
+    .profile__info {
+      display: flex;
+    }
+
+    .profile__name {
+      position: absolute;
+      align-items: start;
+      padding-top: 45px;
+      margin: 0;
+
+      @include vp-767 {
+        padding-top: 20px;
+      }
+    }
+  }
+
+  @include hover-focus {
+    .profile__info {
+      display: flex;
+    }
+
+    .profile__name {
+      position: absolute;
+      align-items: start;
+      padding-top: 45px;
+      margin: 0;
+
+      @include vp-767 {
+        padding-top: 20px;
+      }
+    }
+  }
+}
+
+.profile__name {
+  position: absolute;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 22px;
+  background-color: $color-transparent;
+  color: $color-default-white;
+  padding: 0;
+  z-index: 1;
+
+  @include vp-1365 {
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  @include vp-767 {
+    font-size: 22px;
+    line-height: 22px;
+  }
+
+  span {
+    margin-bottom: 25px;
+
+    @include vp-1365 {
+      margin-bottom: 26px;
+    }
+  }
+}
+
+.profile__info {
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(16, 38, 84, 0.89);
+  filter: drop-shadow(0 0 35px rgba(42, 59, 99, 0.17));
+  color: $color-default-white;
+}
+
+.profile__achievements {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 12px;
+  padding: 50px;
+  padding-top: 0;
+  margin: 0;
+  margin-top: 33px;
+
+  @include vp-767 {
+    margin-top: 20px;
+  }
+}
+
+.profile__achievement {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+
+  @include vp-767 {
+    line-height: 16px;
+  }
+}
+
+.profile__profession {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 24px;
+  color: #b6bdcc;
+}

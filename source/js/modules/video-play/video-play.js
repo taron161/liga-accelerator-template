@@ -17,14 +17,20 @@ const createIframe = (parent, {url, title}) => {
   iframe.setAttribute('title', title);
   iframe.setAttribute('frameborder', 0);
   iframe.setAttribute('allowfullscreen', true);
-  iframe.setAttribute('allow', 'accelerometer; autoplay');
+  iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
   parent.append(iframe);
 };
 
 const playVideo = () => {
-  preview.remove();
-  playBtn.remove();
-  createIframe(container, VIDEO);
+  if (playBtn) {
+    showPlayBnt();
+
+    playBtn.addEventListener('click', () => {
+      preview.remove();
+      playBtn.remove();
+      createIframe(container, VIDEO);
+    });
+  }
 };
 
-export {playVideo, showPlayBnt, playBtn};
+export {playVideo};

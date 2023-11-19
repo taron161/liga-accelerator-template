@@ -1,0 +1,350 @@
+.faq {
+  padding: 120px 0;
+
+  @include vp-1365 {
+    padding: 101px 0;
+  }
+
+  @include vp-767 {
+    padding: 70px 0 71px;
+  }
+
+  h2 {
+    font-family: $ff-alumnisans;
+    font-weight: 600;
+    font-size: 54px;
+    line-height: 54px;
+    letter-spacing: 1.62px;
+    margin-top: 0;
+    margin-bottom: 51px;
+
+    @include vp-1365 {
+      font-size: 42px;
+      line-height: 42px;
+      letter-spacing: 1.26px;
+      text-align: center;
+      margin-bottom: 49px;
+    }
+
+    @include vp-767 {
+      font-size: 32px;
+      line-height: 32px;
+      letter-spacing: 0.96px;
+      margin-bottom: 37px;
+      transform: translateY(1px);
+    }
+  }
+}
+
+.faq__container {
+  display: flex;
+  width: 100%;
+  gap: 40px;
+
+  @include vp-1365 {
+    flex-direction: column;
+  }
+
+  @include vp-767 {
+    gap: 30px;
+  }
+}
+
+.faq__control-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 260px;
+
+  @include vp-1365 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @include vp-767 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+}
+
+
+.faq__tab-wrapper {
+  display: none;
+
+  &.is-active {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    animation: $trans-default tab-animation;
+
+    &::after {
+      position: absolute;
+      content: "";
+      height: 1px;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(28, 51, 116, 0.2);
+    }
+  }
+}
+
+.faq__element {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    height: 1px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(28, 51, 116, 0.2);
+  }
+
+  &:first-child br {
+    @include vp-1365 {
+      display: none;
+    }
+
+    @include vp-767 {
+      display: block;
+    }
+  }
+
+  span,
+  p,
+  button {
+    margin: 0;
+    padding: 0;
+  }
+
+  span {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+
+    br {
+      display: none;
+    }
+
+    @include vp-1365 {
+      font-size: 22px;
+      line-height: 22px;
+      transform: translateY(1px);
+
+      br {
+        display: block;
+      }
+    }
+
+    @include vp-767 {
+      font-size: 20px;
+      line-height: 20px;
+      transform: none;
+    }
+  }
+
+  p {
+    width: 660px;
+    text-align: left;
+    font-size: 18px;
+    margin-top: 4px;
+
+    @include vp-1365 {
+      width: 550px;
+      margin-top: 2px;
+    }
+
+    @include vp-767 {
+      width: 95%;
+      font-size: 16px;
+      line-height: 20px;
+      margin-top: 20px;
+      transform: translateY(1px);
+    }
+  }
+
+  &.is-active {
+    padding-bottom: 25px;
+
+    @include vp-767 {
+      padding-bottom: 22px;
+    }
+
+    button {
+      background-color: $resolution-blue;
+      box-shadow: none;
+      color: $color-default-white;
+
+      &::after {
+        width: 0;
+      }
+    }
+
+    .faq__question {
+      padding-bottom: 0;
+    }
+  }
+}
+
+.faq__question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 22px;
+  padding: 25px 0;
+  cursor: pointer;
+  transition: padding $trans-default;
+
+  @include vp-767 {
+    padding: 22px 0;
+  }
+
+  &:has(button:disabled) {
+    pointer-events: none;
+    cursor: default;
+  }
+
+  @include hover-focus {
+    button:not(:disabled) {
+      background-color: $resolution-blue;
+      box-shadow: none;
+      color: $color-default-white;
+    }
+  }
+
+  button {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    color: $resolution-blue;
+    box-shadow: inset 0 0 0 1px $resolution-blue;
+    background-color: $color-default-white;
+    cursor: pointer;
+    transition: color $trans-default;
+
+    @include vp-767 {
+      width: 30px;
+      height: 30px;
+      min-width: 30px;
+    }
+
+    @include hover-focus {
+      &:not(:disabled) {
+        background-color: $resolution-blue;
+        box-shadow: none;
+        color: $color-default-white;
+      }
+    }
+
+    &:disabled {
+      opacity: 0.3;
+      cursor: default;
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 20px;
+      height: 1px;
+      background-color: currentColor;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      @include vp-767 {
+        width: 14px;
+      }
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      width: 20px;
+      height: 1px;
+      background-color: currentColor;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(90deg);
+      transition: width $trans-default;
+
+      @include vp-767 {
+        width: 14px;
+      }
+    }
+  }
+}
+
+.faq__btn {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 18px;
+  text-transform: none;
+  border: none;
+  outline: none;
+  user-select: none;
+  color: $sapphire;
+  background-color: $color-default-white;
+  padding: 20px 18px 16px;
+  box-shadow: inset 0 0 0 1px rgba(16, 38, 84, 0.2);
+  cursor: pointer;
+  transition: color $trans-default;
+
+  @include vp-767 {
+    font-size: 16px;
+    line-height: 16px;
+    padding: 16px 14px 12px;
+  }
+
+  &:disabled {
+    box-shadow: inset 0 0 0 1px rgba(16, 38, 84, 0.2);
+    background-color: $color-default-white;
+    color: #c8c9cc;
+    cursor: default;
+  }
+
+  &:not(:disabled) {
+    @include hover-focus {
+      box-shadow: inset 0 0 0 1px $sapphire;
+      color: $sapphire;
+    }
+
+    @include active {
+      box-shadow: none;
+      background: $red-blue-gradient;
+      color: $color-default-white;
+    }
+  }
+
+  &.is-active {
+    box-shadow: none;
+    background: $red-blue-gradient;
+    color: $color-default-white;
+    cursor: default;
+    pointer-events: none;
+
+    @include focus {
+      box-shadow: none;
+      color: $color-default-white;
+    }
+  }
+}
+
+@keyframes tab-animation {
+  0% {
+    opacity: 0;
+    filter: blur(2px);
+  }
+
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}

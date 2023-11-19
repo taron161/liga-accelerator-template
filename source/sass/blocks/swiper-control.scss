@@ -1,0 +1,59 @@
+.swiper-control {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.swiper-control__btn {
+  width: 56px;
+  height: 56px;
+  border: none;
+  outline: none;
+  padding: 0;
+  background-color: $color-transparent;
+  color: $sapphire;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: color $trans-default;
+
+  @include vp-767 {
+    width: 30px;
+    height: 30px;
+  }
+
+  &:not(:disabled) {
+    @include hover-focus {
+      box-shadow: inset 0 0 0 1px $sapphire;
+    }
+
+    @include active {
+      color: $color-default-white;
+      background-color: $sapphire;
+    }
+  }
+
+  &:disabled {
+    background-color: $color-transparent;
+    box-shadow: none;
+    opacity: 0.3;
+    cursor: default;
+  }
+
+  svg {
+    display: block;
+    margin: auto;
+    min-width: 32px;
+    min-height: 32px;
+
+    @include vp-767 {
+      min-width: 16px;
+      min-height: 16px;
+    }
+  }
+
+  &--prev {
+    transform: rotate(180deg);
+  }
+}
