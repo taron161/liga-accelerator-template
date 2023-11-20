@@ -59,17 +59,17 @@
       font-size: 14px;
       line-height: 22px;
     }
+  }
 
-    br {
+  p br {
+    display: none;
+
+    @include vp-1365 {
+      display: block;
+    }
+
+    @include vp-767 {
       display: none;
-
-      @include vp-1365 {
-        display: block;
-      }
-
-      @include vp-767 {
-        display: none;
-      }
     }
   }
 }

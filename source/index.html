@@ -57,7 +57,7 @@
                   </li>
                 </ul>
                 <div class="hero__text-wrapper">
-                  <span class="hero__city">ОМСК</span>
+                  <span class="hero__city">Омск</span>
                   <h1 class="hero__title">ФИТНЕС ЦЕНТР</h1>
                   <a class="hero__link btn" href="#subscription">Купить абонемент</a>
                 </div>
@@ -173,7 +173,7 @@
               <li class="subscription__item subscription-card subscription-card--active">
 
                 <h3 class="subscription-card__title">Дневной</h3>
-                <span class="subscription-card__text">с 8:00 до 17:00 </span>
+                <span class="subscription-card__text">с 8:00 до 17:00</span>
                 <div class="subscription-card__price-container">
                   <span data-subscription="price" data-index="1">1700</span>
                   <p class="subscription-card__price">
@@ -190,7 +190,7 @@
               <li class="subscription__item subscription-card">
 
                 <h3 class="subscription-card__title">Полный день</h3>
-                <span class="subscription-card__text">с 8:00 до 22:00 </span>
+                <span class="subscription-card__text">с 8:00 до 22:00</span>
                 <div class="subscription-card__price-container">
                   <span data-subscription="price" data-index="2">2700</span>
                   <p class="subscription-card__price">
@@ -212,7 +212,7 @@
                 <source type="image/webp" srcset="img/weight-plates/weight-plates.webp 1x, img/weight-plates/weight-plates@2x.webp 2x">
 
                 <source type="image/jpg" media="(max-width: 1365px)" srcset="img/weight-plates/tablet/weight-plates.png 1x, img/weight-plates/tablet/weight-plates@2x.png 2x">
-                <img src="img/weight-plates/weight-plates.png" srcset="img/weight-plates/weight-plates@2x.png 2x" width="321" height="384" alt="">
+                <img src="img/weight-plates/weight-plates.png" srcset="img/weight-plates/weight-plates@2x.png 2x" width="287" height="494" alt="">
               </picture>
             </div>
           </div>
@@ -227,7 +227,7 @@
 
               <div class="super-games__text-wrapper">
 
-                <h2 class="super-games__title">SUPER GAMES</h2>
+                <h2 class="super-games__title">Super games</h2>
 
                 <div class="super-games__date-wrapper">
 
@@ -249,7 +249,7 @@
                 </div>
 
                 <p class="super-games__description">Ежегодные соревнования по CrossFit</p>
-                <a class="super-games__btn btn" href="#">заполнить заявку</a>
+                <a class="super-games__btn btn" href="#">Заполнить заявку</a>
 
               </div>
 
@@ -531,7 +531,7 @@
                   <span>Год</span>
                   <b>4999</b>
                   <p>Безлимитный абонемент в тренажерный зал</p>
-                  <a href="#">подробнее</a>
+                  <a href="#">Подробнее</a>
                 </div>
 
                 <div class="banner__image">
@@ -553,7 +553,7 @@
                 <div class="card__text-content">
                   <h3>Месяц бесплатно</h3>
                   <p>Приведи друга, получи абонемент в подарок</p>
-                  <a href="#">подробнее</a>
+                  <a href="#">Подробнее</a>
                 </div>
 
               </div>
@@ -563,7 +563,7 @@
                 <div class="card__text-content">
                   <h3>Скидка 20%</h3>
                   <p>Корпоративный фитнес с командой</p>
-                  <a href="#">подробнее</a>
+                  <a href="#">Подробнее</a>
                 </div>
 
               </div>
@@ -922,7 +922,7 @@
                     <div class="review__text">
                       <span>Анна Орлова</span>
                       <p>
-                        «Хожу в Supergym уже больше года. Нравится, что <br> в клубе всегда чисто, тренажеры обновляют,
+                        «Хожу в Supergym уже больше года. Нравится, что <br>в клубе всегда чисто, тренажеры обновляют,
                         персонал дружелюбный. Зал просторный, даже в вечернее время нет очередей»
                       </p>
                     </div>
@@ -983,23 +983,29 @@
 
           <div class="container">
 
-            <h2 class="feedback__title">Бесплатное занятие </h2>
+            <h2 class="feedback__title">Бесплатное занятие</h2>
 
-            <form action="https://echo.htmlacademy.ru" method="post">
+            <div data-form-validate>
 
-              <p class="feedback__group" data-feedback="input">
-                <label for="name">Введите имя</label>
-                <input type="text" id="name" name="name" placeholder="Имя" required>
-              </p>
+              <form action="https://echo.htmlacademy.ru">
 
-              <p class="feedback__group" data-feedback="input">
-                <label for="phone">Введите номер телефона</label>
-                <input type="tel" id="phone" name="phone" placeholder="Телефон" required>
-              </p>
+                <p class="feedback__group" data-validate-type="text" data-limitation="name" data-on-input-validate
+                data-message-base="Поле обязательно к заполнению" data-message-extra="Проверьте корректность заполнения поля" data-required>
+                  <label for="name">Введите имя</label>
+                  <input type="text" id="name" name="name" placeholder="Имя" required>
+                </p>
 
-              <button class="feedback__btn btn" type="submit">отправить</button>
+                <p class="feedback__group" data-validate-type="phone" data-on-input-validate data-message-base="Поле обязательно к заполнению"
+                data-message-extra="Проверьте корректность заполнения поля" data-message-success="Поле заполнено верно" data-required>
+                  <label for="phone">Введите номер телефона</label>
+                  <input type="tel" id="phone" name="phone" placeholder="Телефон" required>
+                </p>
 
-            </form>
+                <button class="feedback__btn btn" type="submit" data-feedback="btn">Отправить</button>
+
+              </form>
+
+            </div>
 
           </div>
 
