@@ -72,41 +72,33 @@
       left: 10px;
     }
 
-    &.is-disabled {
-      opacity: 0.5;
-      cursor: default;
-      pointer-events: none;
+    @include hover-focus {
+      opacity: 1;
+      box-shadow: inset 0 0 0 1px currentColor;
+
+      &::after {
+        display: none;
+      }
     }
 
-    &:not(.is-disabled) {
-      @include hover-focus {
-        opacity: 1;
-        box-shadow: inset 0 0 0 1px currentColor;
+    @include hover {
+      opacity: 0.8;
+      box-shadow: none;
+    }
 
-        &::after {
-          display: none;
-        }
+
+    @include focus {
+      opacity: 1;
+      box-shadow: inset 0 0 0 1px currentColor;
+
+      &::after {
+        display: none;
       }
+    }
 
-      @include hover {
-        opacity: 0.8;
-        box-shadow: none;
-      }
-
-
-      @include focus {
-        opacity: 1;
-        box-shadow: inset 0 0 0 1px currentColor;
-
-        &::after {
-          display: none;
-        }
-      }
-
-      @include active {
-        opacity: 1;
-        box-shadow: none;
-      }
+    @include active {
+      opacity: 1;
+      box-shadow: none;
     }
   }
 
@@ -127,6 +119,12 @@
       text-align: center;
     }
   }
+}
+
+.offers.is-disabled a {
+  opacity: 0.5;
+  cursor: default;
+  pointer-events: none;
 }
 
 .offers__container {

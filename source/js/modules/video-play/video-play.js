@@ -13,7 +13,7 @@ const showPlayBnt = () => {
 
 const createIframe = (parent, {url, title}) => {
   const iframe = document.createElement('iframe');
-  iframe.setAttribute('src', url + '?autoplay=1');
+  iframe.setAttribute('src', `${url}?autoplay=1`);
   iframe.setAttribute('title', title);
   iframe.setAttribute('frameborder', 0);
   iframe.setAttribute('allowfullscreen', true);
