@@ -65,13 +65,12 @@
 .subscription__btn {
   position: relative;
   background-color: $color-default-white;
-  color: $sapphire;
   font-weight: 400;
   font-size: 20px;
   line-height: 20px;
   border: none;
   outline: none;
-  opacity: 0.5;
+  color: rgba(16, 38, 84, 0.5);
   padding: 10px 0;
   cursor: pointer;
 
@@ -89,7 +88,7 @@
 
   &:not(:disabled) {
     @include hover-focus {
-      opacity: 1;
+      color: $sapphire;
 
       &::after {
         position: absolute;
@@ -103,7 +102,7 @@
     }
 
     @include active {
-      opacity: 1;
+      color: $sapphire;
 
       &::after {
         position: absolute;
@@ -119,7 +118,7 @@
 
   &.is-active {
     position: relative;
-    opacity: 1;
+    color: $sapphire;
     cursor: default;
 
     &::after {

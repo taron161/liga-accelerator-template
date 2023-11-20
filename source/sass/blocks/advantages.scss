@@ -252,6 +252,7 @@ p {
 
   p {
     text-align: center;
+    font-weight: 400;
 
     @include vp-1365 {
       width: 210px;
@@ -259,6 +260,7 @@ p {
 
     @include vp-767 {
       width: 172px;
+      font-weight: 300;
     }
   }
 }
